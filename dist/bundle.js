@@ -20,7 +20,7 @@
 /*! runtime requirements: __webpack_require__, __webpack_require__.n, __webpack_exports__, __webpack_require__.r, module.id, __webpack_require__.d, __webpack_require__.*, module */
 /***/ ((module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => __WEBPACK_DEFAULT_EXPORT__\n/* harmony export */ });\n/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\");\n/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);\n// Imports\n\nvar ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});\n// Module\n___CSS_LOADER_EXPORT___.push([module.id, \"\", \"\"]);\n// Exports\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);\n\n\n//# sourceURL=webpack://weather-app/./src/style.scss?./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => __WEBPACK_DEFAULT_EXPORT__\n/* harmony export */ });\n/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\");\n/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);\n// Imports\n\nvar ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});\n// Module\n___CSS_LOADER_EXPORT___.push([module.id, \"* {\\n  padding: 0;\\n  margin: 0;\\n}\\n\\nhtml,\\nbody {\\n  width: 100%;\\n  height: 100%;\\n  font-family: Futura, sans-serif;\\n}\\n\\nbody {\\n  background: #a0e7e5;\\n}\\n\\n.container {\\n  width: 100%;\\n  height: 100%;\\n  display: grid;\\n  place-items: center;\\n}\\n.container section {\\n  padding: 30px;\\n  background-color: white;\\n  border-radius: 5px;\\n  min-width: 500px;\\n}\\n.container section #search-results {\\n  margin-top: 20px;\\n}\\n.container section #search-results .location {\\n  text-align: center;\\n}\\n.container section #search-results .location h2 {\\n  font-size: 30px;\\n}\\n.container section #search-results .temperature {\\n  display: flex;\\n  justify-content: space-between;\\n  align-items: center;\\n}\\n.container section #search-results .temperature .temp-text {\\n  font-size: 20px;\\n  display: flex;\\n  align-items: center;\\n}\\n.container section #search-results .temperature img {\\n  width: 50px;\\n  height: 50px;\\n}\\n.container section #search-results .temperature .realfeel-text {\\n  font-size: 20px;\\n}\\n.container section #search-results .details {\\n  display: flex;\\n  justify-content: space-between;\\n  align-items: center;\\n}\\n.container section #search-results .details .col {\\n  width: 100%;\\n  padding: 10px 15px;\\n}\\n.container section #search-results .details .col div {\\n  display: flex;\\n  justify-content: space-between;\\n  border-bottom: 1px solid #fafafa;\\n  padding-bottom: 5px;\\n  margin-bottom: 10px;\\n}\", \"\"]);\n// Exports\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);\n\n\n//# sourceURL=webpack://weather-app/./src/style.scss?./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js");
 
 /***/ }),
 
@@ -73,7 +73,50 @@ eval("\n\nvar isOldIE = function isOldIE() {\n  var memo;\n  return function mem
 /*! runtime requirements: __webpack_require__, __webpack_require__.r, __webpack_exports__, __webpack_require__.* */
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.scss */ \"./src/style.scss\");\n\n\n//# sourceURL=webpack://weather-app/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.scss */ \"./src/style.scss\");\n/* harmony import */ var _modules_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/dom */ \"./src/modules/dom.js\");\n/* harmony import */ var _modules_helpers__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/helpers */ \"./src/modules/helpers.js\");\n\n\n\n\n(0,_modules_dom__WEBPACK_IMPORTED_MODULE_1__.default)();\n\nconst search = document.querySelector('#search-btn');\n\nconst f = document.querySelector('form');\n\nsearch.addEventListener('click', (e) => {\n  e.preventDefault();\n  const { city } = f.elements;\n  if (city.value && city.value.length > 3) {\n    const res = (0,_modules_helpers__WEBPACK_IMPORTED_MODULE_2__.getData)(city.value, 'metric');\n    res.then((resp) => {\n      (0,_modules_helpers__WEBPACK_IMPORTED_MODULE_2__.renderWeather)(resp);\n    });\n  }\n});\n\n//# sourceURL=webpack://weather-app/./src/index.js?");
+
+/***/ }),
+
+/***/ "./src/modules/dom.js":
+/*!****************************!*\
+  !*** ./src/modules/dom.js ***!
+  \****************************/
+/*! namespace exports */
+/*! export default [provided] [no usage info] [missing usage info prevents renaming] */
+/*! other exports [not provided] [no usage info] */
+/*! runtime requirements: __webpack_exports__, __webpack_require__.r, __webpack_require__.d, __webpack_require__.* */
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => __WEBPACK_DEFAULT_EXPORT__\n/* harmony export */ });\nconst initFn = () => {\n  const body = document.querySelector('body');\n\n  const content = `\n        <main class=\"container\">\n            <section>\n                <div id=\"search-form\">\n                    <form>\n                        <input type=\"text\" name=\"city\" placeholder=\"enter a city\" />\n                        <button id=\"search-btn\">Search</button>\n                    </form>\n                </div>\n                <div id=\"search-results\">\n                </div>\n            </section>\n        </main>\n    `;\n\n  body.insertAdjacentHTML('beforeend', content);\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (initFn);\n\n//# sourceURL=webpack://weather-app/./src/modules/dom.js?");
+
+/***/ }),
+
+/***/ "./src/modules/fetch.js":
+/*!******************************!*\
+  !*** ./src/modules/fetch.js ***!
+  \******************************/
+/*! namespace exports */
+/*! export default [provided] [no usage info] [missing usage info prevents renaming] */
+/*! other exports [not provided] [no usage info] */
+/*! runtime requirements: __webpack_exports__, __webpack_require__.r, __webpack_require__.d, __webpack_require__.* */
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => __WEBPACK_DEFAULT_EXPORT__\n/* harmony export */ });\nconst key = '0028ea367b25a551e7348f7875810282';\nconst url = 'https://api.openweathermap.org/data/2.5/weather?q=';\n\nasync function fetchWeather(city, unit) {\n  let response;\n  try {\n    response = await fetch(`${url}${city}&appid=${key}&units=${unit}`);\n    response = await response.json();\n  } catch (err) {\n    response = err;\n  }\n  return response;\n}\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (fetchWeather);\n\n//# sourceURL=webpack://weather-app/./src/modules/fetch.js?");
+
+/***/ }),
+
+/***/ "./src/modules/helpers.js":
+/*!********************************!*\
+  !*** ./src/modules/helpers.js ***!
+  \********************************/
+/*! namespace exports */
+/*! export getData [provided] [no usage info] [missing usage info prevents renaming] */
+/*! export renderWeather [provided] [no usage info] [missing usage info prevents renaming] */
+/*! other exports [not provided] [no usage info] */
+/*! runtime requirements: __webpack_require__, __webpack_require__.r, __webpack_exports__, __webpack_require__.d, __webpack_require__.* */
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"getData\": () => /* binding */ getData,\n/* harmony export */   \"renderWeather\": () => /* binding */ renderWeather\n/* harmony export */ });\n/* harmony import */ var _fetch__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./fetch */ \"./src/modules/fetch.js\");\n\n\nasync function getData(city, unit) {\n  const data = await (0,_fetch__WEBPACK_IMPORTED_MODULE_0__.default)(city, unit);\n  const { name } = data;\n  const {\n    feels_like: feelsLike, humidity, temp, temp_max: tempMax, temp_min: tempMin, pressure,\n  } = data.main;\n  const [details] = await data.weather;\n  const { speed } = data.wind;\n  const { description, main, icon } = details;\n  const v = {\n    name,\n    feelsLike,\n    humidity,\n    temp,\n    main,\n    description,\n    tempMin,\n    tempMax,\n    icon,\n    pressure,\n    speed,\n  };\n  return v;\n}\n\nfunction renderWeather(data) {\n  const content = document.querySelector('#search-results');\n  const {\n    temp,\n    name,\n    main,\n    icon,\n    feelsLike,\n    humidity,\n    speed,\n    pressure,\n    tempMax,\n    tempMin,\n    description,\n  } = data;\n  content.innerHTML = `\n                <div class=\"location\">\n                   <h2>${name}</h2>\n                </div>\n                <div class=\"temperature\">\n                    <p class=\"temp-text\">\n                        <img src='https://openweathermap.org/img/wn/${icon}@4x.png' alt=\"icon\" />\n                        ${temp}°<small>C</small>\n                    </p>\n                    <p class=\"realfeel-text\">${description}</p>\n                </div>\n                <div class=\"description\">\n                    <p>${main}</p>\n                </div>\n                <div class=\"details\">\n                    <div class=\"col\">\n                        <div>\n                            <p>Humidity</p>\n                            <p>${humidity}%</p>\n                        </div>\n                        <div>\n                            <p>Wind</p>\n                            <p>${speed} km/h</p>\n                        </div>\n                        <div>\n                            <p>Pressure</p>\n                            <p>${pressure} mb</p>\n                        </div>\n                    </div>\n                    <div class=\"col\">\n                        <div>\n                            <p>Temperature Min</p>\n                            <p>${tempMin}°<small>C</small></p>\n                        </div>\n                        <div>\n                            <p>Temperature Max</p>\n                            <p>${tempMax}°<small>C</small></p>\n                        </div>\n                        <div>\n                            <p>Feels Like</p>\n                            <p>${feelsLike}°<small>C</small></p>\n                        </div>\n                    </div>\n                </div>\n    `;\n}\n\n\n\n//# sourceURL=webpack://weather-app/./src/modules/helpers.js?");
 
 /***/ })
 
