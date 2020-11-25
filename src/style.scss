@@ -26,6 +26,56 @@ body {
     border-radius: 5px;
     min-width: 500px;
 
+    #search-form {
+      display: flex;
+      justify-content: center;
+
+      input {
+        color: inherit;
+        font: inherit;
+        margin-top: 0.5em;
+        border: 1px solid #ccc;
+        box-shadow: inset 0 1px 3px #ddd;
+        border-radius: 2px;
+        vertical-align: middle;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        max-width: 100%;
+        padding: 0.5em 0.6em;
+        margin-bottom: 0.5em;
+      }
+
+      button {
+        font-size: 15px;
+        appearance: none;
+        background: linear-gradient(to bottom, #f46001, #e14802);
+        border: none;
+        color: #fff;
+        border-radius: 3px;
+        padding: 0.6em 1.5em;
+        overflow: hidden;
+        user-select: none;
+        cursor: pointer;
+        z-index: 1;
+        box-shadow: 0 0 1em rgba(white, 0.2);
+        transition:
+          transform 0.1s cubic-bezier(0.5, 0, 0.5, 1),
+          box-shadow 0.2s;
+
+        &:hover {
+          box-shadow: 0 0 2em rgba(white, 0.3);
+        }
+
+        outline: none;
+
+        &:active {
+          transform: scale(0.8) translateY(10%);
+          transition-timing-function: cubic-bezier(0.5, 0, 0.5, 1);
+        }
+      }
+    }
+
     #search-results {
       margin-top: 20px;
 
@@ -33,7 +83,8 @@ body {
         text-align: center;
 
         h2 {
-          font-size: 30px;
+          font-size: 25px;
+          font-weight: 100;
         }
       }
 
@@ -43,14 +94,14 @@ body {
         align-items: center;
 
         .temp-text {
-          font-size: 20px;
+          font-size: 35px;
           display: flex;
           align-items: center;
         }
 
         img {
-          width: 50px;
-          height: 50px;
+          width: 60px;
+          height: 60px;
         }
 
         .realfeel-text {
