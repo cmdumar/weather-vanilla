@@ -1,3 +1,5 @@
+import pageStructure from './helpers';
+
 const initFn = () => {
   const body = document.querySelector('body');
 
@@ -16,9 +18,11 @@ const initFn = () => {
                 </div>
             </section>
         </main>
-    `;
+  `;
 
   body.insertAdjacentHTML('beforeend', content);
+
+  pageStructure();
 };
 
 export default initFn;
