@@ -4,10 +4,12 @@ const initFn = () => {
   const content = `
         <main class="container">
             <section>
+                <h1>Weather Forecast</h1>
                 <div id="search-form">
                     <form>
-                        <input type="text" name="city" placeholder="enter a city" />
+                        <input type="text" name="city" placeholder="Enter a city" />
                         <button id="search-btn">Search</button>
+                        <button id="unit-btn" value="metric">Celsius</button>
                     </form>
                 </div>
                 <div id="search-results">
