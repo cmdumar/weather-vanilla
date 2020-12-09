@@ -1,6 +1,6 @@
 ## Weather App
 
-> A simple weather app made with Javascript. It dynamically changes the background. Toggle weather from Celsius to Fahrenheit and vice versa.
+> A weather app that pulls from the OpenWeatherMap API to allow users to search for and view the forecast in cities worldwide. Built with Vanilla JavaScript and Sass.
 
 ![screenshot](public/screenshot.png)
 
